@@ -12,7 +12,7 @@ horoo int not null,
 hayag varchar(50) not null,
 ognoo date not null,
 tsag time,
-kartnii_burtgel bit,
+kartnii_burtgel int(1),
 PRIMARY KEY(id),
 UNIQUE(reg_dugaar)
 # nas date GENERATED ALWAYS AS (if(convert(substring(reg_dugaar, 3,2), unsigned) < 50,
@@ -26,13 +26,13 @@ UNIQUE(reg_dugaar)
 insert into d_huuhed(ovog, ner, huis, reg_dugaar, horoo, hayag, ognoo, tsag, kartnii_burtgel) values('Erdenejargal', 'Tuvshintsenguun2', 'er', 'UH98020124', 3, '2-r 50000', '2019-04-23', '14:40',0 );
 select * from d_huuhed;
 select * from d_vaktsin;
-insert into d_vaktsin(ner, tun, tungiin_nas, tungiin_duration) values('Vaktsin1', 3, 2, 4)
+insert into d_vaktsin(ner, tun, tungiin_nas, tungiin_duration) values('Vaktsin1', 3, 2, 4);
 select id
 from d_huuhed
 where reg_dugaar = "UI98020124";
 
 CREATE TABLE d_asran_hamgaalagch(h_id int not null, 
-								fom bit not null,
+								fom int(1) not null,
                                 ner varchar(45) not null,
 								utasnii_dugaar int(8) not null,
                                 CONSTRAINT d_asran_hamgaalagch_fk_h_id FOREIGN KEY (h_id) REFERENCES d_huuhed(id) ON DELETE CASCADE,
