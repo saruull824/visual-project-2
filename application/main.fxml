@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainController">
+   <top>
+      <HBox prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: #36B3A8;" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnEhlel" mnemonicParsing="false" onMouseClicked="#ehlel" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ЭХЛЭЛ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnHuuhed" mnemonicParsing="false" onMouseClicked="#huuhed" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ХҮҮХЭД">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnVaktsin" mnemonicParsing="false" onMouseClicked="#vaktsin" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ВАКЦИН">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnAjiltan" mnemonicParsing="false" onMouseClicked="#ajiltan" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="АЖИЛТАН">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnGarah" mnemonicParsing="false" onMouseClicked="#garah" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ГАРАХ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+   </top>
+</BorderPane>
