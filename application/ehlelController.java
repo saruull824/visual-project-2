@@ -71,7 +71,7 @@ public class ehlelController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		tableNer.setCellValueFactory(new PropertyValueFactory<>("ner"));
 		tableVaktsin.setCellValueFactory(new PropertyValueFactory<>("vaktsin"));
-		check();
+		//check();
 		emch.setItems(emchOptions);
 		suvilagch.setItems(suvilagchOptions);
 		vaktsin.setItems(vaktsinOptions);
@@ -181,55 +181,55 @@ public class ehlelController implements Initializable{
     }
     
     void check() {
-    	Vector<String> huuhduud = new Vector<String>();
-    	Vector<Float> huuhduud_nas = new Vector<Float>();
-    	Vector<String> vaktsin = new Vector<String>();
-    	Vector<Float> vaktsin_nas = new Vector<Float>();
-    	Vector<Float> vaktsin_duration = new Vector<Float>();
-    	Integer today = Integer.valueOf(new SimpleDateFormat("yyyyMMdd").format(new java.util.Date()));
-
-    	try {
-		 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital2", "root", "");			
-		    ResultSet rs = conn.createStatement().executeQuery("SELECT ovog, ner, reg_dugaar from d_huuhed where horoo = 6");
-		    while(rs.next()){
-		    	huuhduud.add(rs.getString("ovog").charAt(0) + "." + rs.getString("ner"));
-		    	Integer huuhedBirth = Integer.valueOf(rs.getString("reg_dugaar").substring(2, 8));
-		    	if (huuhedBirth > 500000)
-		    		huuhedBirth += 19000000;
-		    	else {
-		    		huuhedBirth += 20000000;
-		    		huuhedBirth -= 2000;
-		    	}
-		    	if(today%100 < huuhedBirth%100) {
-		    		 huuhedBirth += 100;
-		    	}
-		    	today /= 100;
-		    	huuhedBirth /= 100;
-		    	int diff = today-huuhedBirth;
-		    	if(diff%100 > 12)
-		    		diff -= 88;
-		    	huuhduud_nas.add((float)diff/100);
-		    }
-		} catch (SQLException e) {
-		    e.printStackTrace();
-		}
-    	
-    	try {
-		 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital2", "root", "");			
-		    ResultSet rs = conn.createStatement().executeQuery("SELECT ner, tungiin_nas, tungiin_duration from d_vaktsin");
-		    while(rs.next()){
-		    	vaktsin.add(rs.getString("ner"));
-		    	vaktsin_nas.add(Float.valueOf(rs.getString("tungiin_nas")));
-		    	vaktsin_duration.add(Float.valueOf(rs.getString("tungiin_duration")));
-		    }
-		} catch (SQLException e) {
-		    e.printStackTrace();
-		}
-    	
-    	for(int i = 0; i < huuhduud.size(); i++)
-    		for(int j = 0; j < vaktsin.size(); j++) {
-    			if(huuhduud_nas.elementAt(i) >= vaktsin_nas.elementAt(j) && huuhduud_nas.elementAt(i) <= vaktsin_nas.elementAt(j)+vaktsin_duration.elementAt(j))
-    				tableview.getItems().add(new relatedHuuhed(huuhduud.elementAt(i), vaktsin.elementAt(j)));
-    		}
+//    	Vector<String> huuhduud = new Vector<String>();
+//    	Vector<Float> huuhduud_nas = new Vector<Float>();
+//    	Vector<String> vaktsin = new Vector<String>();
+//    	Vector<Float> vaktsin_nas = new Vector<Float>();
+//    	Vector<Float> vaktsin_duration = new Vector<Float>();
+//    	Integer today = Integer.valueOf(new SimpleDateFormat("yyyyMMdd").format(new java.util.Date()));
+//
+//    	try {
+//		 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital2", "root", "");			
+//		    ResultSet rs = conn.createStatement().executeQuery("SELECT ovog, ner, reg_dugaar from d_huuhed where horoo = 6");
+//		    while(rs.next()){
+//		    	huuhduud.add(rs.getString("ovog").charAt(0) + "." + rs.getString("ner"));
+//		    	Integer huuhedBirth = Integer.valueOf(rs.getString("reg_dugaar").substring(2, 8));
+//		    	if (huuhedBirth > 500000)
+//		    		huuhedBirth += 19000000;
+//		    	else {
+//		    		huuhedBirth += 20000000;
+//		    		huuhedBirth -= 2000;
+//		    	}
+//		    	if(today%100 < huuhedBirth%100) {
+//		    		 huuhedBirth += 100;
+//		    	}
+//		    	today /= 100;
+//		    	huuhedBirth /= 100;
+//		    	int diff = today-huuhedBirth;
+//		    	if(diff%100 > 12)
+//		    		diff -= 88;
+//		    	huuhduud_nas.add((float)diff/100);
+//		    }
+//		} catch (SQLException e) {
+//		    e.printStackTrace();
+//		}
+//    	
+//    	try {
+//		 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital2", "root", "");			
+//		    ResultSet rs = conn.createStatement().executeQuery("SELECT ner, tungiin_nas, tungiin_duration from d_vaktsin");
+//		    while(rs.next()){
+//		    	vaktsin.add(rs.getString("ner"));
+//		    	vaktsin_nas.add(Float.valueOf(rs.getString("tungiin_nas")));
+//		    	vaktsin_duration.add(Float.valueOf(rs.getString("tungiin_duration")));
+//		    }
+//		} catch (SQLException e) {
+//		    e.printStackTrace();
+//		}
+//    	
+//    	for(int i = 0; i < huuhduud.size(); i++)
+//    		for(int j = 0; j < vaktsin.size(); j++) {
+//    			if(huuhduud_nas.elementAt(i) >= vaktsin_nas.elementAt(j) && huuhduud_nas.elementAt(i) <= vaktsin_nas.elementAt(j)+vaktsin_duration.elementAt(j))
+//    				tableview.getItems().add(new relatedHuuhed(huuhduud.elementAt(i), vaktsin.elementAt(j)));
+//    		}
     }
 }

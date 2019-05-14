@@ -127,7 +127,7 @@ public class huuhedController implements Initializable {
 	@FXML
 	void btnNemehAction(ActionEvent event) {
 		try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("edit.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("huuhedEdit.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             
             Stage stage = new Stage();
@@ -135,6 +135,9 @@ public class huuhedController implements Initializable {
             stage.setTitle(null);
             stage.setResizable(false);
             stage.setScene(new Scene(root1));
+            stage.setOnHidden(e -> {
+                refresh();
+            });
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -169,18 +172,21 @@ public class huuhedController implements Initializable {
 	void btnZasahAction(ActionEvent event) {
 		if(!tableview.getSelectionModel().isEmpty()) {
 			try {
-	            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("edit.fxml"));
+	            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("huuhedEdit.fxml"));
 	            Parent root1 = (Parent) fxmlLoader.load();
 	
-	            editController editController = fxmlLoader.getController();
-	            editController.setId(Integer.valueOf(tableview.getSelectionModel().getSelectedItem().getDugaar()));
-	            editController.fill();
+	            huuhedEditController huuhedEditController = fxmlLoader.getController();
+	            huuhedEditController.setId(Integer.valueOf(tableview.getSelectionModel().getSelectedItem().getDugaar()));
+	            huuhedEditController.fill();
 	            
 	            Stage stage = new Stage();
 	            stage.initModality(Modality.APPLICATION_MODAL);
-	            stage.setTitle("HWI - Login");
+	            stage.setTitle(null);
 	            stage.setResizable(false);
 	            stage.setScene(new Scene(root1));
+	            stage.setOnHidden(e -> {
+	                refresh();
+	            });
 	            stage.show();
 	        } catch (Exception e) {
 	            e.printStackTrace();
