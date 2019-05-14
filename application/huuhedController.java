@@ -17,6 +17,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -68,9 +69,13 @@ public class huuhedController implements Initializable {
 	@FXML
 	private TableColumn<huuhed, String> colHReg;
 	
+	@FXML
+	private Label seeAll;
+	
 	ObservableList<huuhed> observableList = FXCollections.observableArrayList();
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		seeAll.setVisible(false);
 		colHDugaar.setCellValueFactory(new PropertyValueFactory<>("idx"));
 		colHOvog.setCellValueFactory(new PropertyValueFactory<>("ovog"));
 		colHNer.setCellValueFactory(new PropertyValueFactory<>("ner"));
@@ -111,7 +116,9 @@ public class huuhedController implements Initializable {
 	
 	 @FXML
 	 void btnHaihAction(ActionEvent event) {
-		try {
+		 if(!seeAll.isVisible())
+			 seeAll.setVisible(true);
+		 try {
 		 	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital2", "root", "");			
 		    ResultSet rs = conn.createStatement().executeQuery("SELECT id, ovog, ner, huis, reg_dugaar from d_huuhed where ner='"+ner.getText()+"'");
 		    observableList.clear();
@@ -196,6 +203,8 @@ public class huuhedController implements Initializable {
 	
 	@FXML
 	void bugdiigHarah(MouseEvent event) {
+		ner.clear();
+		seeAll.setVisible(false);
 		refresh();
 	}
 }
