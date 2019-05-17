@@ -44,6 +44,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Label text="Хүүхдийн РД:" />
@@ -62,6 +63,7 @@
             <Button mnemonicParsing="false" onAction="#haih" text="Хайх" GridPane.columnIndex="2" />
             <Label text="Тайлбар:" GridPane.rowIndex="6" />
             <TextArea fx:id="tailbar" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" onAction="#tuuh" text="Түүх" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="TOP" />
          </children>
          <padding>
             <Insets right="10.0" />

@@ -87,7 +87,23 @@ public class huuhedController implements Initializable {
 		    row.setOnMouseClicked(event -> {
 		        if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
 		            huuhed rowData = row.getItem();
-		            System.out.println(rowData);
+		            try {
+			            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("huuhedProfile.fxml"));
+			            Parent root1 = (Parent) fxmlLoader.load();
+			
+			            huuhedProfileController huuhedProfileController = fxmlLoader.getController();
+			            huuhedProfileController.setId(Integer.valueOf(rowData.getDugaar()));
+			            huuhedProfileController.fill();
+			            
+			            Stage stage = new Stage();
+			            stage.initModality(Modality.APPLICATION_MODAL);
+			            stage.setTitle(null);
+			            stage.setResizable(false);
+			            stage.setScene(new Scene(root1));
+			            stage.show();
+			        } catch (Exception e) {
+			            e.printStackTrace();
+			        }
 		        }
 		    });
 		    return row ;

@@ -28,7 +28,7 @@ public class huuhedEditController implements Initializable {
 	void setId(int id) {
 		this.id = id;
 	}
-	
+
 	@FXML
 	private TextField ovog;
 
@@ -173,7 +173,7 @@ public class huuhedEditController implements Initializable {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Мэдээлэл");
 			alert.setHeaderText(null);
-			alert.setContentText("Алдаа гарлаа.");
+			alert.setContentText("Хоосон талбаруудыг бөглөнө үү.");
 			alert.showAndWait();
 		} else {
 			Alert alert = new Alert(AlertType.INFORMATION);
