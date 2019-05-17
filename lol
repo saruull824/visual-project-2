@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.huuhedController">
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.huuhedController">
    <center>
       <HBox prefHeight="69.0" prefWidth="327.0" BorderPane.alignment="CENTER">
          <children>
@@ -31,7 +31,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label onMouseClicked="#bugdiigHarah" prefHeight="47.0" prefWidth="46.0" text="Бүгдийг харах" textAlignment="CENTER" textFill="#2600ff" wrapText="true">
+                  <Label fx:id="seeAll" onMouseClicked="#bugdiigHarah" prefHeight="47.0" prefWidth="46.0" text="Бүгдийг харах" textAlignment="CENTER" textFill="#2600ff" wrapText="true">
                      <HBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </HBox.margin>
@@ -52,7 +52,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnNemeh" mnemonicParsing="false" onAction="#btnNemehAction" onMouseClicked="#test" prefHeight="27.0" prefWidth="77.0" text=" Нэмэх">
+                        <Button fx:id="btnNemeh" mnemonicParsing="false" onAction="#btnNemehAction" prefHeight="27.0" prefWidth="77.0" text=" Нэмэх">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>

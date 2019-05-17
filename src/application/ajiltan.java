@@ -3,20 +3,18 @@ package application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class huuhed {
+public class ajiltan {
 	private final StringProperty dugaar;
 	private final StringProperty ovog;
 	private final StringProperty ner;
-	private final StringProperty huis;
-	private final StringProperty regdugaar;
+	private final StringProperty tushaal;
 	private final StringProperty idx;
 	
-	public huuhed(String dugaar, String ovog, String ner, String huis, String regdugaar, String idx) {
+	public ajiltan(String dugaar, String ovog, String ner, String tushaal, String idx) {
 		this.dugaar = new SimpleStringProperty(dugaar);
 		this.ovog = new SimpleStringProperty(ovog);
 		this.ner = new SimpleStringProperty(ner);
-		this.huis= new SimpleStringProperty(huis);
-		this.regdugaar= new SimpleStringProperty(regdugaar);
+		this.tushaal= new SimpleStringProperty(tushaal);
 		this.idx = new SimpleStringProperty(idx);
 	}
 	
@@ -32,13 +30,10 @@ public class huuhed {
 		return ner.get();
 	}
 	
-	public String getHuis() {
-		return huis.get();
+	public String getTushaal() {
+		return tushaal.get();
 	}
 	
-	public String getRegdugaar() {
-		return regdugaar.get();
-	}
 	
 	public void setDugaar(String value) {
 		dugaar.set(value);
@@ -52,12 +47,8 @@ public class huuhed {
 		ner.set(value);
 	}
 	
-	public void setHuis(String value) {
-		huis.set(value);
-	}
-	
-	public void setRegdugaar(String value) {
-		regdugaar.set(value);
+	public void setTushaal(String value) {
+		tushaal.set(value);
 	}
 	
 	public StringProperty dugaarProperty() {
@@ -72,13 +63,11 @@ public class huuhed {
 		return ner;
 	}
 	
-	public StringProperty huisProperty() {
-		return huis;
+	public StringProperty tushaalProperty() {
+		return tushaal;
 	}
 	
-	public StringProperty regdugaarProperty() {
-		return regdugaar;
-	}
+	
 	
 	public String getIdx() {
 		return idx.get();

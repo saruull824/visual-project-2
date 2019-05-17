@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ajiltanController">
+   <center>
+      <HBox prefHeight="69.0" prefWidth="327.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="146.0" prefWidth="848.0">
+               <children>
+                  <TextField fx:id="ner" prefHeight="27.0" prefWidth="208.0">
+                     <HBox.margin>
+                        <Insets left="20.0" top="58.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ComboBox fx:id="haihCombo" prefHeight="27.0" prefWidth="103.0" promptText="Нэр">
+                     <HBox.margin>
+                        <Insets left="20.0" top="58.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Button fx:id="btnAjiltanHaih" mnemonicParsing="false" onAction="#btnAjiltanHaihAction" prefHeight="27.0" prefWidth="103.0" text="Хайх">
+                     <HBox.margin>
+                        <Insets left="10.0" top="58.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="seeAll" onMouseClicked="#bugdiigHarahA" prefHeight="27.0" prefWidth="80.0" text="Бүгдийг харах" textAlignment="CENTER" textFill="#2600ff" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="10.0" top="60.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+            <HBox prefHeight="196.0" prefWidth="649.0">
+               <children>
+                  <ButtonBar prefHeight="155.0" prefWidth="401.0">
+                    <buttons>
+                      <Button fx:id="btnAjiltanZasah" minWidth="50.0" mnemonicParsing="false" onAction="#btnAjiltanZasahAction" prefHeight="27.0" prefWidth="107.0" text="Засварлах">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnAjiltanNemeh" mnemonicParsing="false" onAction="#btnAjiltanNemehAction" prefHeight="27.0" prefWidth="77.0" text=" Нэмэх">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnAjiltanUstgah" mnemonicParsing="false" onAction="#btnAjiltanUstgahAction" text="Устгах">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                    </buttons>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </ButtonBar>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+   <bottom>
+      <TableView fx:id="tableview" prefHeight="588.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="colHDugaar" prefWidth="44.0" resizable="false" text="#" />
+          <TableColumn fx:id="colAOvog" prefWidth="325.0" text="Овог" />
+          <TableColumn fx:id="colANer" prefWidth="360.0" text="Нэр" />
+            <TableColumn fx:id="colATushaal" maxWidth="10000.0" prefWidth="270.0" text="Албан тушаал" />
+        </columns>
+      </TableView>
+   </bottom>
+</BorderPane>

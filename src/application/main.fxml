@@ -5,27 +5,32 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainController">
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainController">
    <top>
-      <HBox prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: #36B3A8;" stylesheets="@application.css" BorderPane.alignment="CENTER">
+      <HBox prefHeight="70.0" prefWidth="1000.0" style="-fx-background-color: #36B3A8;" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnEhlel" mnemonicParsing="false" onMouseClicked="#ehlel" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ЭХЛЭЛ">
+            <Button fx:id="btnEhlel" mnemonicParsing="false" onMouseClicked="#ehlel" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ЭХЛЭЛ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnHuuhed" mnemonicParsing="false" onMouseClicked="#huuhed" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ХҮҮХЭД">
+            <Button fx:id="btnHuuhed" mnemonicParsing="false" onMouseClicked="#huuhed" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ХҮҮХЭД">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnVaktsin" mnemonicParsing="false" onMouseClicked="#vaktsin" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ВАКЦИН">
+            <Button fx:id="btnVaktsin" mnemonicParsing="false" onMouseClicked="#vaktsin" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ВАКЦИН">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnProgram" mnemonicParsing="false" onMouseClicked="#program" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ПРОГРАМ">
+            <Button fx:id="btnAjiltan" mnemonicParsing="false" onMouseClicked="#ajiltan" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="АЖИЛТАН">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnGarah" mnemonicParsing="false" onMouseClicked="#garah" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ГАРАХ">
+            <Button fx:id="btnTailan" mnemonicParsing="false" onMouseClicked="#tailan" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ТАЙЛАН">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnGarah" mnemonicParsing="false" onMouseClicked="#garah" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white;" text="ГАРАХ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
