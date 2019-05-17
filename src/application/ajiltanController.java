@@ -220,6 +220,9 @@ public class ajiltanController implements Initializable{
             stage.setTitle(null);
             stage.setResizable(false);
             stage.setScene(new Scene(root1));
+            stage.setOnHidden(e -> {
+                refresh();
+            });
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

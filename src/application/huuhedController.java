@@ -248,7 +248,6 @@ public class huuhedController implements Initializable {
 			try {
 	            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("huuhedEdit.fxml"));
 	            Parent root1 = (Parent) fxmlLoader.load();
-	
 	            huuhedEditController huuhedEditController = fxmlLoader.getController();
 	            huuhedEditController.setId(Integer.valueOf(tableview.getSelectionModel().getSelectedItem().getDugaar()));
 	            huuhedEditController.fill();
